@@ -1,0 +1,51 @@
+[
+    {
+      "name": "Guatemala City",
+      "description": "The capital and largest city of Guatemala, known for its bustling markets and rich cultural history.",
+      "latitude": 14.6349,
+      "longitude": -90.5069
+    },
+    {
+      "name": "Antigua",
+      "description": "A beautiful colonial city surrounded by volcanoes, known for its well-preserved Spanish Baroque architecture.",
+      "latitude": 14.5611,
+      "longitude": -90.7344
+    },
+    {
+      "name": "Flores",
+      "description": "A picturesque town located on an island in Lake Petén Itzá, close to the ancient Maya ruins of Tikal.",
+      "latitude": 16.9226,
+      "longitude": -89.8990
+    },
+    {
+      "name": "Tikal",
+      "description": "One of the largest archaeological sites of the Maya civilization, located in the tropical rainforests of northern Guatemala.",
+      "latitude": 17.2213,
+      "longitude": -89.6237
+    },
+    {
+      "name": "Livingston",
+      "description": "A coastal town on the Caribbean, known for its unique Garifuna culture and beautiful beaches.",
+      "latitude": 15.8261,
+      "longitude": -88.7482
+    },
+    {
+      "name": "Belize City",
+      "description": "The largest city in Belize, known as the gateway to the country's many islands and natural attractions.",
+      "latitude": 17.5046,
+      "longitude": -88.1962
+    },
+    {
+      "name": "Caye Caulker",
+      "description": "A small island in the Caribbean Sea, popular for snorkeling, diving, and its laid-back atmosphere.",
+      "latitude": 17.7426,
+      "longitude": -88.0260
+    },
+    {
+      "name": "Barrier Reef",
+      "description": "The Belize Barrier Reef is the second largest coral reef system in the world, home to a rich diversity of marine life.",
+      "latitude": 17.4706,
+      "longitude": -87.6289
+    }
+  ]
+  

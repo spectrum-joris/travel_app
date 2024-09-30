@@ -1,0 +1,17 @@
+{
+  "name": "travelmap_leaflet_json_dom",
+  "version": "1.0.0",
+  "description": "## installeer dependencies ## - npm init -y - npm install express",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
