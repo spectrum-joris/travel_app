@@ -1,51 +1,137 @@
 [
-    {
-      "name": "Guatemala City",
-      "description": "The capital and largest city of Guatemala, known for its bustling markets and rich cultural history.",
-      "latitude": 14.6349,
-      "longitude": -90.5069
-    },
-    {
-      "name": "Antigua",
-      "description": "A beautiful colonial city surrounded by volcanoes, known for its well-preserved Spanish Baroque architecture.",
-      "latitude": 14.5611,
-      "longitude": -90.7344
-    },
-    {
-      "name": "Flores",
-      "description": "A picturesque town located on an island in Lake Petén Itzá, close to the ancient Maya ruins of Tikal.",
-      "latitude": 16.9226,
-      "longitude": -89.8990
-    },
-    {
-      "name": "Tikal",
-      "description": "One of the largest archaeological sites of the Maya civilization, located in the tropical rainforests of northern Guatemala.",
-      "latitude": 17.2213,
-      "longitude": -89.6237
-    },
-    {
-      "name": "Livingston",
-      "description": "A coastal town on the Caribbean, known for its unique Garifuna culture and beautiful beaches.",
-      "latitude": 15.8261,
-      "longitude": -88.7482
-    },
-    {
-      "name": "Belize City",
-      "description": "The largest city in Belize, known as the gateway to the country's many islands and natural attractions.",
-      "latitude": 17.5046,
-      "longitude": -88.1962
-    },
-    {
-      "name": "Caye Caulker",
-      "description": "A small island in the Caribbean Sea, popular for snorkeling, diving, and its laid-back atmosphere.",
-      "latitude": 17.7426,
-      "longitude": -88.0260
-    },
-    {
-      "name": "Barrier Reef",
-      "description": "The Belize Barrier Reef is the second largest coral reef system in the world, home to a rich diversity of marine life.",
-      "latitude": 17.4706,
-      "longitude": -87.6289
-    }
-  ]
-  
+  {
+    "name": "Guatemala City",
+    "description": "De hoofdstad en grootste stad van Guatemala, bekend om zijn levendige markten en rijke culturele geschiedenis.",
+    "latitude": 14.6349,
+    "longitude": -90.5069,
+    "type": "city",
+    "arrival": "12 juli",
+    "duration": 1
+  },
+  {
+    "name": "Antigua",
+    "description": "Een prachtige koloniale stad omgeven door vulkanen, bekend om zijn goed bewaarde Spaanse barokke architectuur.",
+    "latitude": 14.5611,
+    "longitude": -90.7344,
+    "type": "city",
+    "arrival": "12 juli",
+    "duration": 2
+  },
+  {
+    "name": "El Fuego",
+    "description": "Vulkaan, een avontuurlijke bestemming voor natuurliefhebbers.",
+    "latitude": 14.4743,
+    "longitude": -90.8808,
+    "type": "adventure",
+    "arrival": "15 juli",
+    "duration": 2
+  },
+  {
+    "name": "Panajachel",
+    "description": "Een pittoresk stadje aan de oevers van het Atitlánmeer, bekend om zijn prachtige omgeving en inheemse cultuur.",
+    "latitude": 14.7386,
+    "longitude": -91.1520,
+    "type": "city",
+    "arrival": "17 juli",
+    "duration": 2
+  },
+  {
+    "name": "Semuc Champey",
+    "description": "Een prachtig natuurmonument met kalksteenpoelen en turquoise water.",
+    "latitude": 15.5333,
+    "longitude": -89.9610,
+    "type": "city",
+    "arrival": "19 juli",
+    "duration": 2
+  },
+  {
+    "name": "Tikal Temple Trail",
+    "description": "Een van de grootste archeologische vindplaatsen van de Maya-beschaving, gelegen in de tropische regenwouden van Noord-Guatemala.",
+    "latitude": 17.2213,
+    "longitude": -89.6237,
+    "type": "nature",
+    "arrival": "21 juli",
+    "duration": 2
+  },
+  {
+    "name": "San Ignacio",
+    "description": "Een charmant stadje in Belize, bekend om zijn nabijheid tot oude Maya-ruïnes en avontuurlijke activiteiten zoals grotonderzoek.",
+    "latitude": 17.1587,
+    "longitude": -89.0706,
+    "type": "adventure",
+    "arrival": "23 juli",
+    "duration": 2
+  },
+  {
+    "name": "Flores",
+    "description": "Een pittoresk stadje gelegen op een eiland in het Petén Itzá-meer, dicht bij de oude Maya-ruïnes van Tikal.",
+    "latitude": 16.9254,
+    "longitude": -89.8942,
+    "type": "city",
+    "arrival": "NOT?",
+    "duration": 0
+  },
+  {
+    "name": "Livingston",
+    "description": "Een kustplaats aan de Caribische Zee, bekend om zijn unieke Garifuna-cultuur en prachtige stranden.",
+    "latitude": 15.8267,
+    "longitude": -88.7573,
+    "type": "beach",
+    "arrival": "NOT?",
+    "duration": 0
+  },
+  {
+    "name": "Belize City",
+    "description": "De grootste stad van Belize, bekend als de toegangspoort tot de vele eilanden en natuurlijke attracties van het land.",
+    "latitude": 17.5046,
+    "longitude": -88.1962,
+    "type": "city",
+    "arrival": "NOT?",
+    "duration": 0
+  },
+  {
+    "name": "Hopkins",
+    "description": "Een klein kustdorp in Belize, bekend om zijn Garifuna-cultuur en reggae-sfeer.",
+    "latitude": 16.8667,
+    "longitude": -88.2833,
+    "type": "city",
+    "arrival": "NOT?",
+    "duration": 0
+  },
+  {
+    "name": "Caye Caulker",
+    "description": "Een klein eiland in de Caribische Zee, populair voor snorkelen, duiken en de relaxte sfeer.",
+    "latitude": 17.7426,
+    "longitude": -88.0260,
+    "type": "beach",
+    "arrival": "27 juli",
+    "duration": 3
+  },
+  {
+    "name": "Barrier Reef",
+    "description": "Het Belize Barrier Reef is het op een na grootste koraalrifsysteem ter wereld, met een rijke diversiteit aan zeeleven.",
+    "latitude": 17.4706,
+    "longitude": -87.6186,
+    "type": "sports",
+    "arrival": "NOT?",
+    "duration": 0
+  },
+  {
+    "name": "Bacalar",
+    "description": "Een stad in Mexico, bekend om de Lagune van Zeven Kleuren en ecotoeristische activiteiten zoals peddelsurfen.",
+    "latitude": 18.6743,
+    "longitude": -88.3972,
+    "type": "sports",
+    "arrival": "30 juli",
+    "duration": 2
+  },
+  {
+    "name": "Playa del Carmen",
+    "description": "Een populaire badplaats in Mexico, beroemd om zijn prachtige stranden, winkels en nachtleven.",
+    "latitude": 20.6296,
+    "longitude": -87.0739,
+    "type": "beach",
+    "arrival": "1 augustus",
+    "duration": 3
+  }
+]

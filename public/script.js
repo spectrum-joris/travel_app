@@ -29,38 +29,79 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // 4 Pas het eigen icoon aan met de juiste grootte
-    const customIcon = L.icon({
-        iconUrl: '/images/marker-icon.png', // Zorg ervoor dat het pad naar je eigen icon klopt
-        iconSize: [64, 64], // Pas deze waarden aan om het icoon te schalen
-        iconAnchor: [32, 64], // Punt van het icoon dat op de locatie komt te staan (midden-onder)
-        popupAnchor: [0, -64] // De plek waar de popup opent, t.o.v. het icoon
-    });
+    // Functie om de juiste icon voor de marker te kiezen op basis van het type
+    function getCustomIcon(type) {
+        let iconUrl = '/images/default-marker.png'; // Fallback als geen type bekend is
+        if (type === 'city') {
+            iconUrl = '/images/city-marker.png';
+        } else if (type === 'beach') {
+            iconUrl = '/images/beach-marker.png';
+        } else if (type === 'sports') {
+            iconUrl = '/images/sports-marker.png';
+        } else if (type === 'adventure') {
+            iconUrl = '/images/adventure-marker.png';
+        } else if (type === 'nature') {
+                iconUrl = '/images/nature-marker.png';
+        }
+
+    return L.icon({
+        iconUrl: iconUrl,
+        iconSize: [40, 40], // Pas grootte aan zoals gewenst
+        iconAnchor: [20, 40], // Punt van het icoon dat op de locatie komt te staan
+        popupAnchor: [0, -40] // Waar de popup opent t.o.v. het icoon
+        });
+    }
+
 
     // 5 functie om markers en list items toe te voegen aan kaart resp. DOM
+    // Voeg markers en list items toe aan de kaart en DOM
     function displayLocations(map, locations) {
         const locationsList = document.getElementById("locationsList");
-        const latlngs = []; // Array om de coördinaten op te slaan voor de polyline
-        let previousLatLng = null; // Houd de vorige locatie bij voor afstandsberekening
+        const latlngs = [];
+        let previousLatLng = null;
 
         locations.forEach((location) => {
-            const currentLatLng = L.latLng(location.latitude, location.longitude); // Coördinaten voor deze locatie
-            latlngs.push(currentLatLng); // Voeg de locatie toe aan de array voor de polyline
+            const currentLatLng = L.latLng(location.latitude, location.longitude);
+            latlngs.push(currentLatLng);
+
+            // Kies het juiste icoon op basis van het type
+            const customIcon = getCustomIcon(location.type);
 
             // Voeg marker toe aan kaart
             const marker = L.marker(currentLatLng, { icon: customIcon }).addTo(map);
-            marker.bindPopup(`<b>${location.name}</b><br>${location.description}`);
+            marker.bindPopup(`<b>${location.name} • ${location.duration} dagen</b><br>${location.description}`);
 
             // Voeg locatie toe aan lijst
             const listItem = document.createElement("div");
             listItem.classList.add("location-item");
-            listItem.textContent = location.name;
 
-            // Voeg de afstand toe als dit niet de eerste locatie is
-            if (previousLatLng) {
-                const distance = calculateDistance(previousLatLng, currentLatLng).toFixed(2);
-                listItem.textContent += ` (Afstand vanaf vorige stop: ${distance} km)`;
+            function getRandomColor() {
+                const r = Math.ceil(Math.random() * 70);
+                const g = Math.ceil(Math.random() * 150);
+                const b = Math.ceil(Math.random() * 120);
+                return `rgba(${r},${g},${b}, .7)`;
             }
 
+            listItem.style.backgroundColor = getRandomColor();
+            listItem.style.color = "beige";
+            listItem.style.boxShadow = "0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.3)";
+
+            // Zet de type en naam in een grotere tekst
+            const nameDiv = document.createElement("div");
+            nameDiv.classList.add("location-name");
+            nameDiv.innerHTML = `${location.type} ${location.name}`;
+
+            // Voeg de afstand toe in een kleinere tekst
+            const distanceDiv = document.createElement("div");
+            distanceDiv.classList.add("location-distance");
+
+            if (previousLatLng) {
+                const distance = calculateDistance(previousLatLng, currentLatLng).toFixed(0);
+                distanceDiv.innerHTML = `Afstand: ${distance} km`;
+            }
+
+            listItem.appendChild(nameDiv);
+            listItem.appendChild(distanceDiv);
             locationsList.appendChild(listItem);
 
             // Inzoomen op locatie bij klikken
@@ -69,13 +110,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                 marker.openPopup();
             });
 
-            // Sla de huidige locatie op als de vorige voor de volgende iteratie
             previousLatLng = currentLatLng;
         });
-
-        // Teken de polyline die de locaties verbindt
-        const polyline = L.polyline(latlngs, { color: 'blue' }).addTo(map);
-        map.fitBounds(polyline.getBounds()); // Zorg ervoor dat de kaart op alle locaties inzoomt
+        
+        // teken de lijn
+        const polyline = L.polyline(latlngs, { color: '#c62fab' }).addTo(map);
+        map.fitBounds(polyline.getBounds());
     }
 
     // 1 de "main" async functie om de kaart en locaties te laden
