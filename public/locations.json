@@ -40,7 +40,7 @@
     "description": "Een prachtig natuurmonument met kalksteenpoelen en turquoise water.",
     "latitude": 15.5333,
     "longitude": -89.9610,
-    "type": "city",
+    "type": "adventure",
     "arrival": "19 juli",
     "duration": 2
   },
@@ -49,7 +49,7 @@
     "description": "Een van de grootste archeologische vindplaatsen van de Maya-beschaving, gelegen in de tropische regenwouden van Noord-Guatemala.",
     "latitude": 17.2213,
     "longitude": -89.6237,
-    "type": "nature",
+    "type": "adventure",
     "arrival": "21 juli",
     "duration": 2
   },
@@ -94,7 +94,7 @@
     "description": "Een klein kustdorp in Belize, bekend om zijn Garifuna-cultuur en reggae-sfeer.",
     "latitude": 16.8667,
     "longitude": -88.2833,
-    "type": "city",
+    "type": "beach",
     "arrival": "NOT?",
     "duration": 0
   },
@@ -112,7 +112,7 @@
     "description": "Het Belize Barrier Reef is het op een na grootste koraalrifsysteem ter wereld, met een rijke diversiteit aan zeeleven.",
     "latitude": 17.4706,
     "longitude": -87.6186,
-    "type": "sports",
+    "type": "nature",
     "arrival": "NOT?",
     "duration": 0
   },

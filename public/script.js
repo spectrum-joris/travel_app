@@ -29,20 +29,24 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // 4 Pas het eigen icoon aan met de juiste grootte
-    // Functie om de juiste icon voor de marker te kiezen op basis van het type
-    function getCustomIcon(type) {
+    // Functie om de juiste icon voor de marker te kiezen op basis van het type of duration
+    function getCustomIcon(type, duration) {
         let iconUrl = '/images/default-marker.png'; // Fallback als geen type bekend is
-        if (type === 'city') {
-            iconUrl = '/images/city-marker.png';
-        } else if (type === 'beach') {
-            iconUrl = '/images/beach-marker.png';
-        } else if (type === 'sports') {
-            iconUrl = '/images/sports-marker.png';
-        } else if (type === 'adventure') {
-            iconUrl = '/images/adventure-marker.png';
-        } else if (type === 'nature') {
-                iconUrl = '/images/nature-marker.png';
-        }
+
+        // Controleer eerst op de duration
+    if (duration === 0) {
+        iconUrl = '/images/not-marker.png';  // Speciale marker voor locaties zonder duration
+    } else if (type === 'beach') {
+        iconUrl = '/images/beach-marker.png';
+    } else if (type === 'sports') {
+        iconUrl = '/images/sports-marker.png';
+    } else if (type === 'adventure') {
+        iconUrl = '/images/adventure-marker.png';
+    } else if (type === 'nature') {
+        iconUrl = '/images/nature-marker.png';
+    } else if (type === 'city') {
+        iconUrl = '/images/city-marker.png';
+    }
 
     return L.icon({
         iconUrl: iconUrl,
@@ -65,7 +69,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             latlngs.push(currentLatLng);
 
             // Kies het juiste icoon op basis van het type
-            const customIcon = getCustomIcon(location.type);
+            const customIcon = getCustomIcon(location.type, location.duration);
 
             // Voeg marker toe aan kaart
             const marker = L.marker(currentLatLng, { icon: customIcon }).addTo(map);
